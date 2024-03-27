@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('messages', function (Blueprint $table) {
+        Schema::create('conversations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('conversation_id');
-            $table->unsignedBigInteger('parent_id')->nullable(); // ID of the parent message
-            $table->unsignedBigInteger('user_id');
-            $table->text('content');
+            $table->string('title')->nullable(); // Title of the conversation - not neccessary just keeping a place holder
             $table->timestamps();
         });
+        
     }
 
     /**
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('messages');
+        Schema::dropIfExists('conversations');
     }
 };

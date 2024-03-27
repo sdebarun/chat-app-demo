@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('messages', function (Blueprint $table) {
-            $table->id();
+        // Pivot table to store participants of each conversation
+        Schema::create('conversation_user', function (Blueprint $table) {
             $table->unsignedBigInteger('conversation_id');
-            $table->unsignedBigInteger('parent_id')->nullable(); // ID of the parent message
             $table->unsignedBigInteger('user_id');
-            $table->text('content');
-            $table->timestamps();
+
+            $table->foreign('conversation_id')->references('id')->on('conversations')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('messages');
+        Schema::dropIfExists('conversation_user');
     }
 };
