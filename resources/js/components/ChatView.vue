@@ -1,18 +1,20 @@
 <template>
-    <div class="container">
+    <v-container>
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Chat component</div>
-                       
-                    <select v-model="recipient_id" @change="fetchChatData">
-                        <option value>Select User</option>
-                        <option value="1">Debarun 1</option>
-                        <option value="2">Debarun 2</option>
-                        <option value="3">Debarun 3</option>
-                    </select>
-                        <hr/>
-                    <div class="card-body">
+                <v-card class="mx-3">
+                    <v-card-item>
+                    <v-card-title>Chat component</v-card-title>
+                    <v-select
+                        v-model="recipient_id"
+                        :items="recipients"
+                        label="Select recipient"
+                        item-title="name"
+                        item-value="value"
+                        @update:modelValue="fetchChatData"
+                    ></v-select>
+                    </v-card-item>
+                    <v-card class="pa-4 ma-3">
                         <Message
                             v-for="message in messages"
                             :key="message.id"
@@ -25,11 +27,11 @@
                         <ChatBox class="chat-box" @submit="sendMessage" />
 
                         <!-- <RegisterDialog v-if="!user" @submit="onRegister" /> -->
-                    </div>
-                </div>
+                    </v-card>
+                </v-card>
             </div>
         </div>
-    </div>
+    </v-container>
 </template>
 
 <script>
@@ -38,6 +40,11 @@ export default {
         messages: [],
         recipient_id: null,
         userMessage: null,
+        recipients: [
+            { name: "deabrun 1", value: 1 },
+            { name: "debarun 2", value: 2 },
+            { name: "deabrun 3", value: 3 },
+        ],
     }),
     mounted() {
         this.fetchChatData();
@@ -55,7 +62,7 @@ export default {
                 .catch((err) => console.log(err));
         },
         fetchChatData() {
-           if(!this.recipient_id) return;
+            if (!this.recipient_id) return;
             window.axios
                 .get(`/messages?recipient_id=${this.recipient_id}`)
                 .then(({ data }) => {

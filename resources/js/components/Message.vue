@@ -1,10 +1,10 @@
 <template>
-  <div
+  <v-card
       :class='["message", { dark }]'
   >
     <h5>{{ sender.name }}</h5>
     {{ content }}
-  </div>
+  </v-card>
 </template>
 
 <script>
