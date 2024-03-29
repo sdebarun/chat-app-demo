@@ -5,10 +5,10 @@
      <div class="card">
          <div class="card-header">Chats</div>
          <div class="card-body">
-             <chat-messages :all-messages="messages"></chat-messages>
+             <chat-view></chat-view>  
+             <!-- make sure to remove the chat user data. or encrypt it. better remove it once config us done -->
          </div>
          <div class="card-footer">
-             <chat-form @messagesent="addMessage()" :user="{{ Auth::user() }}"></chat-form>
          </div>
      </div>
  </div>
