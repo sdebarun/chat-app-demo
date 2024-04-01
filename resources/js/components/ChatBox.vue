@@ -19,7 +19,7 @@ export default {
 
     // We will call this when the form is submitted
     onSubmit() {
-      this.$emit("submit", this.text);
+      this.$emit("submit", {text : this.text});
       this.text = '';
     }
   }

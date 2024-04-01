@@ -2,8 +2,9 @@
   <v-card
       :class='["message", { dark }]'
   >
-    <h5>{{ sender.name }}</h5>
-    {{ content }}
+  {{ content }}
+  <v-divider></v-divider>
+  sent by <i>{{ sender.name }}</i> at {{ sentAt }}
   </v-card>
 </template>
 
@@ -22,9 +23,12 @@ export default {
     },
     dark: {
       type : Boolean
+    },
+    sentAt : {
+      type : String
     }
 
-  }
+  },
 }
 </script>
 

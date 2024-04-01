@@ -4,24 +4,25 @@
             <div class="col-md-8">
                 <v-card class="mx-3">
                     <v-card-item>
-                    <v-card-title>Chat component</v-card-title>
-                    <v-select
-                        v-model="recipient_id"
-                        :items="recipients"
-                        label="Select recipient"
-                        item-title="name"
-                        item-value="value"
-                        @update:modelValue="fetchChatData"
-                    ></v-select>
+                        <v-card-title>Chat Window</v-card-title>
+                        <v-select
+                            v-model="recipient_id"
+                            :items="recipients"
+                            label="Select recipient"
+                            item-title="name"
+                            item-value="value"
+                            @update:modelValue="fetchChatData"
+                        ></v-select>
                     </v-card-item>
                     <v-card class="pa-4 ma-3">
                         <Message
                             v-for="message in messages"
                             :key="message.id"
                             :class="['message', { right: message.isSentByMe }]"
-                            :dark="message.isSentByMe"
+                            :dark="message.isSentByMe ?? false"
                             :content="message.message.content"
                             :sender="message.sender"
+                            :sent-at="message.created_at"
                         />
 
                         <ChatBox class="chat-box" @submit="sendMessage" />
@@ -50,15 +51,20 @@ export default {
         this.fetchChatData();
     },
 
+    created() {
+        window.Echo.private("rg-astro-chat").listen("NewMessage", (e) => {
+            this.fetchChatData();
+        });
+    },
+
     methods: {
-        sendMessage(text) {
-            console.log(text);
+        sendMessage(data) {
             window.axios
                 .post("/messages", {
                     recipient_id: this.recipient_id,
-                    message: text,
+                    message: data.text,
                 })
-                .then((data) => console.log(data))
+                .then((data) => this.fetchChatData())
                 .catch((err) => console.log(err));
         },
         fetchChatData() {
@@ -67,7 +73,6 @@ export default {
                 .get(`/messages?recipient_id=${this.recipient_id}`)
                 .then(({ data }) => {
                     this.messages = data;
-                    console.log(this.messages);
                 })
                 .catch((err) => console.log(err));
         },
