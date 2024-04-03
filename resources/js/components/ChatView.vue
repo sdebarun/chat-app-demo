@@ -25,7 +25,7 @@
                             :sent-at="message.created_at"
                         />
 
-                        <ChatBox class="chat-box" @submit="sendMessage" />
+                        <ChatBox class="chat-box" @submit="sendMessage"/>
 
                         <!-- <RegisterDialog v-if="!user" @submit="onRegister" /> -->
                     </v-card>
@@ -45,7 +45,7 @@ export default {
             { name: "deabrun 1", value: 1 },
             { name: "debarun 2", value: 2 },
             { name: "deabrun 3", value: 3 },
-        ],
+        ]
     }),
     mounted() {
         this.fetchChatData();
@@ -55,6 +55,7 @@ export default {
         window.Echo.private("rg-astro-chat").listen("NewMessage", (e) => {
             this.fetchChatData();
         });
+        
     },
 
     methods: {
@@ -76,7 +77,7 @@ export default {
                 })
                 .catch((err) => console.log(err));
         },
-    },
+    }
 };
 </script>
 
