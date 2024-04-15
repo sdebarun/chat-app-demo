@@ -20,11 +20,13 @@ import Message from "./components/Message.vue";
 import ChatBox from "./components/ChatBox.vue";
 import RegisterDialog from "./components/RegisterDialog.vue";
 import ChatView from "./components/ChatView.vue";
+import NavigationComponent from "./components/NavigationComponent.vue"
 app.component('example-component', ExampleComponent);
 app.component('Message', Message);
 app.component('ChatBox', ChatBox);
 app.component('RegisterDialog', RegisterDialog);
 app.component('chat-view', ChatView);
+app.component('navbar', NavigationComponent);
 
 /**
  * The following block of code may be used to automatically register your
