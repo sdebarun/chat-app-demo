@@ -5,6 +5,14 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\RolesSeeder;
+use Database\Seeders\StatesTableSeeder;
+use Database\Seeders\CountriesTableSeeder;
+use Database\Seeders\CitiesTableChunkOneSeeder;
+use Database\Seeders\CitiesTableChunkTwoSeeder;
+use Database\Seeders\CitiesTableChunkFiveSeeder;
+use Database\Seeders\CitiesTableChunkFourSeeder;
+use Database\Seeders\CitiesTableChunkThreeSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,7 +35,16 @@ class DatabaseSeeder extends Seeder
 
     protected function runSeeder(){
         $this->call([
-            MessageSeeder::class,
+            //MessageSeeder::class,
+            CountriesTableSeeder::class,
+            StatesTableSeeder::class,
+            CitiesTableChunkOneSeeder::class,
+            CitiesTableChunkTwoSeeder::class,
+            CitiesTableChunkThreeSeeder::class,
+            CitiesTableChunkFourSeeder::class,
+            CitiesTableChunkFiveSeeder::class,
+            RolesSeeder::class,
+
         ]);
     }
 }

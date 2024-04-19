@@ -23,8 +23,8 @@ return new class extends Migration
             $table->unsignedBigInteger('state_id')->after('country_id');
             $table->integer('experience')->unsigned()->nullable()->after('state_id');
             $table->integer('rating')->default(0)->after('experience');
-            $table->unsignedBigInteger('wallet_id')->after('rating')->nullable()->comment('if null that is a customer if numeric then astrologer');
             $table->json('languages_spoken')->nullable()->after('rating');
+            $table->string('referral')->nullable()->after('languages_spoken');
             $table->softDeletes()->after('updated_at');
             
         });
@@ -48,7 +48,6 @@ return new class extends Migration
             $table->dropColumn('state_id');
             $table->dropColumn('experience');
             $table->dropColumn('rating');
-            $table->dropColumn('wallet_id');
             $table->dropColumn('languages_spoken');
             $table->dropColumn('deleted_at');
         });
