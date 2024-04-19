@@ -20,12 +20,17 @@ import Message from "./components/Message.vue";
 import ChatBox from "./components/ChatBox.vue";
 import RegisterDialog from "./components/RegisterDialog.vue";
 import ChatView from "./components/ChatView.vue";
+import NavbarComponent from "./components/NavbarComponent.vue";
+import SliderCmponent from "./components/SliderCmponent.vue";
+import ConsultantComponent from "./components/ConsultantComponent.vue";
 app.component('example-component', ExampleComponent);
 app.component('Message', Message);
 app.component('ChatBox', ChatBox);
 app.component('RegisterDialog', RegisterDialog);
 app.component('chat-view', ChatView);
-
+app.component('TopNav', NavbarComponent);
+app.component('slider', SliderCmponent);
+app.component('consultant', ConsultantComponent);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

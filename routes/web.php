@@ -2,10 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChatsController;
+use App\Http\Controllers\PagesController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::group(['middleware' => ['auth']],function(){
     Route::get('/chat', [App\Http\Controllers\ChatsController::class, 'index']);
     Route::get('/messages', [App\Http\Controllers\ChatsController::class, 'fetchMessages']);
@@ -17,3 +18,5 @@ Route::group(['middleware' => ['auth']],function(){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/', [PagesController::class, 'index']);

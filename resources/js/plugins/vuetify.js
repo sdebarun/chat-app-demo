@@ -9,7 +9,7 @@ const customeTheme = {
     colors: {
         primary: "#673AB7",
         secondary: "#424242",
-        accent: "#82B1FF",
+        accent: "#FFB155",
         error: "#FF5252",
         info: "#2196F3",
         success: "#4CAF50",
@@ -29,6 +29,8 @@ const customeTheme = {
         lightpink: "#FFCFE3",
         white: "#FFFFFF",
         muted: "#6c757d",
+        consultantBg : '#7950DA'
+        
     },
 };
 
