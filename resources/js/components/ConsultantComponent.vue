@@ -56,7 +56,7 @@
                         color="white"
                         size="30"
                         length="1"
-                        readonly=true
+                        :readonly="true"
                     ></v-rating>
                     <span class="text-grey-lighten-2 text-caption me-2">
                         ({{ rating }})
