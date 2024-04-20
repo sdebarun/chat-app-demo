@@ -23,7 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light top-nav shadow-sm">
             <div class="container">
-                <a class="navbar-brand logo-link" href="{{ url('/') }}"><img class="logo-img" src="https://astrokun.com/_next/image?url=%2Fimages%2Fbrand_logo.png&w=640&q=75"/></a>
+                <a class="navbar-brand logo-link" href="{{ url('/') }}"><img class="logo-img" src="https://astrokun.com/_next/image?url=%2Fimages%2Fbrand_logo.png&w=640&q=75" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -31,7 +31,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="#">Problems</a>
                         </li>
                         <li class="nav-item">
@@ -86,13 +86,7 @@
         <main class="">
             @yield('content')
         </main>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-4"></div>
-                <div class="col-md-4"></div>
-            </div>
-        </div>
+            <footer-section/>
     </div>
 </body>
 
