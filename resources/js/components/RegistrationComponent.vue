@@ -1,7 +1,16 @@
 <template>
     <v-container>
         <v-row>
-            
+            <v-alert
+                closable
+                :type="errorMessage ? 'error' : 'success'"
+                variant="outlined"
+                v-if="errorMessage"
+                class="my-4"
+                >{{ errorMessage }}
+            </v-alert>
+        </v-row>
+        <v-row>
             <v-col cols="6" md="6">
                 <v-text-field
                     v-model="formData.name"
@@ -22,7 +31,7 @@
             </v-col>
             <v-col cols="6" md="6">
                 <v-text-field
-                    v-model="formData.phone"
+                    v-model="formData.phone_number"
                     label="Phone"
                     validate-on-blur
                     variant="outlined"
@@ -84,7 +93,7 @@
                     item-value="id"
                     label="State"
                     clearable
-                    variant="underlined"
+                    variant="outlined"
                     validate-on-blur
                 ></v-select>
             </v-col>
@@ -106,9 +115,11 @@
                     clearable
                     variant="outlined"
                     validate-on-blur
+                    chips
+                    multiple
                 ></v-select>
             </v-col>
-            <v-col cols="4" md="4">
+            <!-- <v-col cols="4" md="4">
                 <v-file-input
                     v-model="formData.avatar"
                     clearable
@@ -119,9 +130,23 @@
                     placeholder="select file"
                     validate-on-blur
                 ></v-file-input>
-            </v-col>
+            </v-col> -->
             <v-col cols="12" class="text-center">
-                <v-btn @click="submitForm()">Submit</v-btn>
+                <v-btn
+                    class="ma-2 text-capitalize"
+                    color="primary"
+                    @click="submitForm()"
+                >
+                    Sign up
+                </v-btn>
+
+                <v-btn
+                    class="ma-2 text-capitalize"
+                    color="warning"
+                    @click="clearInputs()"
+                >
+                    Clear
+                </v-btn>
             </v-col>
         </v-row>
     </v-container>
@@ -130,19 +155,23 @@
 <script>
 export default {
     data: () => ({
-        valid: false,
+        errorMessage: null,
+        errors: false,
         name: null,
         email: null,
         rules: {
             required: (v) => !!v || "The filed is required",
-            validEmail: 
-                (v) => /.+@.+\..+/.test(v) || "Please enter a valid email",
-            
-            avatar : (value) => (!value || !value.length || value[0].size < 2000000) || 'Avatar size should be less than 2 MB!'
-                
+            validEmail: (v) =>
+                /.+@.+\..+/.test(v) || "Please enter a valid email",
+
+            avatar: (value) =>
+                !value ||
+                !value.length ||
+                value[0].size < 2000000 ||
+                "Avatar size should be less than 2 MB!",
         },
         formData: {
-            phone: null,
+            phone_number: null,
             name: null,
             email: null,
             password: null,
@@ -153,7 +182,6 @@ export default {
             state_id: null,
             experience: null,
             languages_spoken: null,
-            avatar : null,
         },
 
         countries: [
@@ -168,11 +196,33 @@ export default {
     }),
 
     methods: {
-        submitForm(){
+        submitForm() {
             console.log(this.formData);
-        }
-    }
+        },
+        clearInputs() {
+            //
+        },
+
+        submitForm() {
+            console.log(this.formData);
+            window.axios
+                .post("/registration", this.formData)
+                .then((data) => {
+                    console.log(data);
+                })
+                .catch((err) => {
+                    if (err.response?.data?.errors) {
+                        this.errors = true;
+                        this.errorMessage = err.response?.data?.message;
+                    }
+                });
+        },
+    },
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.v-field__input input {
+    background: transparent;
+}
+</style>

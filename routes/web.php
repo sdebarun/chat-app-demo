@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ChatsController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\AuthenticationController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -20,3 +20,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/', [PagesController::class, 'index']);
+
+//registartion 
+Route::post('registration', [AuthenticationController::class,'registration']);
