@@ -34,6 +34,7 @@ class User extends Authenticatable
         'experience',
         'rating',
         'languages_spoken',
+        'referral',
     ];
 
     /**

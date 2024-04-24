@@ -24,4 +24,4 @@ Route::get('/', [PagesController::class, 'index']);
 
 //registartion 
 Route::post('registration', [AuthenticationController::class,'registration']);
-Route::get('consultants', [UserController::class, 'getConsultants']);
+Route::get('consultants', [PagesController::class, 'consultants']);

@@ -1,6 +1,6 @@
 <template>
     <v-row class="my-4">
-        <v-col cols="12" md="4" v-for="num in 6" :key="num">
+        <v-col cols="12" md="4" v-for="consultant in consultants" :key="consultant">
             <v-card
                 class="mx-auto px-5 py-5 rounded-lg"
                 color="consultantBg"
@@ -12,13 +12,13 @@
                         <v-img
                             class="flex-grow-0"
                             height="125px"
-                            src="https://cdn.vuetifyjs.com/images/cards/halcyon.png"
+                            :src="consultant.diaplay_pic ? `/assests/avatars/${consultant.diaplay_pic}` :`/assets/images/dummy.jpg`"
                             style="flex-basis: 125px"
                             contain
                         ></v-img>
                     </v-avatar>
                     <v-card-title class="flex-grow-1 flex-column align-start">
-                        <div class="text-h6">Debarun Saha</div>
+                        <div class="text-h6">{{consultant.name}}</div>
 
                         <!-- <div class="text-h6 font-weight-thin">
                             <v-chip class="my-2">Free</v-chip>
@@ -27,7 +27,7 @@
                             >Physics, Chemistry, Math</v-card-subtitle
                         >
                         <v-card-subtitle class="font-weight-thin"
-                            >English, Bengali</v-card-subtitle
+                            >{{ parseLanguages(consultant.languages_spoken) }}</v-card-subtitle
                         >
                     </v-card-title>
                 </div>
@@ -59,7 +59,7 @@
                         :readonly="true"
                     ></v-rating>
                     <span class="text-grey-lighten-2 text-caption me-2">
-                        ({{ rating }})
+                        ({{ consultant.rating }})
                     </span>
                 </v-card-actions>
             </v-card>
@@ -69,11 +69,32 @@
 
 <script>
 export default {
+    props : {
+        consultants  :{
+            type: [Object, Array],
+            required : false,
+        }
+    },
     data: () => ({
         rating: 4.7,
+
     }),
+    methods: {
+        parseLanguages(languages_spoken){
+            const langs = JSON.parse(languages_spoken);
+            let langsStr = '';
+             //todo very bad way of handling the language and showing them. need to find a better way.
+            langs.forEach((element, index) => {
+                langsStr = langsStr + ` ${element}`  ;
+                if(index < langs.length-1 ){
+                    langsStr = langsStr + ',' 
+                }
+            });
+            return langsStr;
+        }
+    },
     mounted() {
-        console.log("Component mounted.");
+        console.log(this.consultants);
     },
 };
 </script>

@@ -35,10 +35,13 @@
                             <a class="nav-link" href="#">Problems</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{url('consultants')}}">Consultants</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="#">AstroMall</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Customized Services</a>
+                            <a class="nav-link" href="#">Services</a>
                         </li>
 
                         <li class="nav-item">
