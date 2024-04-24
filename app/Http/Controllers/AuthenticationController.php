@@ -19,11 +19,7 @@ class AuthenticationController extends Controller
 
       $user = User::create($requestData);
       $user->assignRole(['consultant']);
-      return response()->json($user->roles,201);
+      return response()->json(['status' => true],201);
 
-    }
-
-    public function getConsultants(){
-        
     }
 }

@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <v-row>
+        <v-row v-if="showForm">
             <v-alert
                 closable
                 :type="errorMessage ? 'error' : 'success'"
@@ -10,7 +10,7 @@
                 >{{ errorMessage }}
             </v-alert>
         </v-row>
-        <v-row>
+        <v-row v-if="showForm"> 
             <v-col cols="6" md="6">
                 <v-text-field
                     v-model="formData.name"
@@ -149,11 +149,16 @@
                 </v-btn>
             </v-col>
         </v-row>
+        <v-row v-if="success">
+            <registration-success/>
+        </v-row>
     </v-container>
 </template>
 
 <script>
+import RegistrationSuccess from './RegistrationSuccess.vue';
 export default {
+  components: { RegistrationSuccess },
     data: () => ({
         errorMessage: null,
         errors: false,
@@ -193,6 +198,8 @@ export default {
             { name: "Sikkim", id: 2 },
         ],
         languages: ["Bengali", "English", "Hindi"],
+        showForm: true,
+        success : false,
     }),
 
     methods: {
@@ -208,7 +215,10 @@ export default {
             window.axios
                 .post("/registration", this.formData)
                 .then((data) => {
-                    console.log(data);
+                    if(data.status){
+                        this.showForm = false;
+                        this.success = true;
+                    }
                 })
                 .catch((err) => {
                     if (err.response?.data?.errors) {
