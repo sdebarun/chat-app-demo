@@ -23,7 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light top-nav shadow-sm">
             <div class="container">
-                <a class="navbar-brand logo-link" href="{{ url('/') }}"><img class="logo-img" src="https://astrokun.com/_next/image?url=%2Fimages%2Fbrand_logo.png&w=640&q=75" /></a>
+                <a class="navbar-brand logo-link" href="{{ url('/') }}"><img class="logo-img" src="{{ asset('assets/images/logo.png') }}" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

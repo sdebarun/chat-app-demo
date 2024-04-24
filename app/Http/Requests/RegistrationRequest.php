@@ -23,7 +23,7 @@ class RegistrationRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'email' => 'required|email|unique:users',
+            'email' => 'email|unique:users',
             'phone_number' => 'required|numeric|unique:users',
             'pincode' => 'required|numeric',
             'experience' => 'required|numeric',

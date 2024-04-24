@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\UserController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -23,3 +24,4 @@ Route::get('/', [PagesController::class, 'index']);
 
 //registartion 
 Route::post('registration', [AuthenticationController::class,'registration']);
+Route::get('consultants', [UserController::class, 'getConsultants']);

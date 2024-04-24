@@ -1,13 +1,15 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="container">
-    <!-- <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-5 mx-0 px-0">
+            <img src="{{asset('assets/images/zodiac.jpg')}}" class="cover mx-0" />
+        </div>
+        <div class="col-md-7 my-0 mx-0 py-2">
+            <!--<div class="card-header">{{ __('Register') }}</div>
 
-                <div class="card-body">
+                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -69,10 +71,9 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
+                </div> -->
+            <registration />
         </div>
-    </div> -->
-    <registration/>
+    </div>
 </div>
 @endsection

@@ -4,7 +4,7 @@
             <v-alert
                 closable
                 :type="errorMessage ? 'error' : 'success'"
-                variant="outlined"
+                variant=""
                 v-if="errorMessage"
                 class="my-4"
                 >{{ errorMessage }}
@@ -26,7 +26,7 @@
                     label="Email"
                     validate-on-blur
                     variant="outlined"
-                    :rules="[rules.required, rules.validEmail]"
+                    :rules="[rules.validEmail]"
                 ></v-text-field>
             </v-col>
             <v-col cols="6" md="6">
@@ -35,7 +35,7 @@
                     label="Phone"
                     validate-on-blur
                     variant="outlined"
-                    :rules="rules.required"
+                    :rules="[rules.required]"
                 ></v-text-field>
             </v-col>
             <v-col cols="6" md="6">
