@@ -17,7 +17,7 @@ class AuthenticationController extends Controller
       $requestData['password'] = Hash::make($request->password);
       $requestData['last_active_at'] = Carbon::now();
     //   return $requestData;
-      $referralCode = Str::random(6);
+      $referralCode = Str::random(8);
       $requestData['referral'] = $referralCode;
       $user = User::create($requestData);
       $user->assignRole(['consultant']);

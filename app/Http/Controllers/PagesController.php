@@ -12,7 +12,8 @@ class PagesController extends Controller
         //
     }
     public function index() {
-        return view('pages.home');
+        $consultants = $this->topConsultants();
+        return view('pages.home')->with(['consultants' => $consultants]);
     }
 
 
@@ -22,5 +23,9 @@ class PagesController extends Controller
         }
         $consultants = $this->userModel->role('consultant')->get();
         return view('pages.consultants')->with(['consultants' => $consultants]);
+    }
+
+    public function topConsultants(){
+        return $this->userModel->role('consultant')->orderBy('rating',"DESC")->limit(6)->get();
     }
 }

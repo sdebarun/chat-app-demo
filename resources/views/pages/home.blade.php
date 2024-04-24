@@ -5,7 +5,7 @@
     <slider></slider>
     <h3 class="my-4">Astrologers</h3>
     
-        <consultant></consultant>
+        <consultant :consultants="{{ json_encode($consultants) }}"></consultant>
    
 </div>
 @endsection
