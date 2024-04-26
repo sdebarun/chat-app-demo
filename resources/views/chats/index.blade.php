@@ -1,5 +1,5 @@
  <!-- resources/views/chat/index.blade.php -->
- @extends('layouts.app')
+ @extends('layouts.main')
  @section('content')
  <div class="container">
      <div class="card">

@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+/**
+ * it drives the website pages 
+ * No auth routes actions should be placed here. 
+ * the pages should ideally be placed in views.pages
+ */
 class PagesController extends Controller
 {
     public function __construct(Private User $userModel)
@@ -19,7 +24,8 @@ class PagesController extends Controller
 
     public function consultants( $id = null) {
         if(!is_null($id)){
-            return $id;
+            $consultant = $this->userModel->find($id);
+            return !is_null($consultant) ? view('pages.consultant-detail')->with(['consultant' => $consultant]) : abort(404);
         }
         $consultants = $this->userModel->role('consultant')->get();
         return view('pages.consultants')->with(['consultants' => $consultants]);

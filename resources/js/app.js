@@ -24,6 +24,9 @@ import SliderCmponent from "./components/SliderCmponent.vue";
 import ConsultantComponent from "./components/ConsultantComponent.vue";
 import FooterComponent from "./components/FooterComponent.vue";
 import RegistrationComponent from "./components/RegistrationComponent.vue";
+import NavigationComponent from "./components/NavigationComponent.vue"
+import LoginComponent from './components/LoginComponent.vue';
+import SingleConsultant from './components/SingleConsultantComponent.vue';
 app.component('example-component', ExampleComponent);
 app.component('Message', Message);
 app.component('ChatBox', ChatBox);
@@ -33,6 +36,10 @@ app.component('slider', SliderCmponent);
 app.component('consultant', ConsultantComponent);
 app.component('footer-section', FooterComponent );
 app.component('registration', RegistrationComponent);
+app.component('navbar', NavigationComponent);
+app.component('Login', LoginComponent);
+app.component('single-consultant', SingleConsultant);
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

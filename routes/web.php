@@ -22,6 +22,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/', [PagesController::class, 'index']);
 
-//registartion 
+// no middleware - site pages 
 Route::post('registration', [AuthenticationController::class,'registration']);
-Route::get('consultants', [PagesController::class, 'consultants']);
+Route::get('consultants/{id?}', [PagesController::class, 'consultants']);
+
+// auth routes 
+Route::group([ 'middleware' => ['auth']], function(){
+    Route::get('dashboard', [App\Http\Controllers\DashboardController::class,'index'])->name('dashboard');
+});
