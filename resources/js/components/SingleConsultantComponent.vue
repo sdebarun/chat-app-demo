@@ -1,29 +1,40 @@
 <template>
     <v-container>
         <v-row>
-            <v-col cols="12" md="4">
-                <v-avatar size="300">
+            <v-col cols="12" md="4" class="text-center">
+                <v-avatar size="300" class="border">
                     <v-img
                         class="flex-grow"
                         :src="
-                            consultant.diaplay_pic
-                                ? `/assests/avatars/${consultant.diaplay_pic}`
-                                : `https://i.pravatar.cc/300`
+                            consultant.display_pic
+                                ? `/assets/avatars/${consultant.display_pic}`
+                                : `/assets/images/dummy.jpg`
                         "
                         style="flex-basis: 125px"
                         contain
                     ></v-img>
                 </v-avatar>
-                <v-card class="ma-2 pa-2 bg-transparent" elevation=0>
-                    
-                </v-card>
+                <div class="flex-grow-1 flex-column text-center pa-2 ma-3">
+                    <!-- <v-btn color="primary" class="font-weight-thin text-capitalize rounded-pill mr-3">
+                        <v-icon icon="mdi-phone-in-talk-outline" start></v-icon>
+                        Call Now
+                    </v-btn> -->
+
+                    <v-btn
+                        color="primary"
+                        class="font-weight-thin text-capitalize rounded-pill ml-3"
+                    >
+                        <v-icon icon="mdi-forum-outline" start></v-icon>
+                        Chat Now
+                    </v-btn>
+                </div>
             </v-col>
             <v-col md="8">
                 <v-card variant="tonal">
                     <v-card-title>{{ consultant.name }}</v-card-title>
                     <v-card-subtitle>
                         <v-chip
-                            class="mr-1 font-weight-bold"
+                            class="mr-1 font-weight-bold text-text0"
                             color="primary"
                             v-for="language in JSON.parse(
                                 consultant.languages_spoken
@@ -33,27 +44,35 @@
                             {{ language }}
                         </v-chip>
                     </v-card-subtitle>
-                    <v-card-subtitle class="font-weight-bold text-text0 my-2"
-                        ><v-chip class="px-3"><v-icon color="red" class="ma-2 " icon="mdi-theme-light-dark"></v-icon>Physics, Chemistry, Math</v-chip></v-card-subtitle
+                    <v-card-subtitle class="my-2"
+                        ><v-chip class="px-3 font-weight-bold text-primary"
+                            ><v-icon
+                                color="red"
+                                class="ma-2"
+                                icon="mdi-theme-light-dark"
+                            ></v-icon
+                            ><span>Physics, Chemistry, Math</span></v-chip
+                        ></v-card-subtitle
                     >
                     <v-card-text>
-                        Lorem Ipsum is simply dummy text of the printing and
+                        <p>Lorem Ipsum is simply dummy text of the printing and
                         typesetting industry. Lorem Ipsum has been the
                         industry's standard dummy text ever since the 1500s,
                         when an unknown printer took a galley of type and
                         scrambled it to make a type specimen book. It has
                         survived not only five centuries, but also the leap into
                         electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of
-                        Letraset sheets containing Lorem Ipsum passages, and
-                        more recently with desktop publishing software like
-                        Aldus PageMaker including versions of Lorem Ipsum.
+                        It was popular in the 1960s with the release of some
+                        sheet sheets containing Lorem Ipsum passages, and more
+                        recently with desktop publishing software like Aldus
+                        PageMaker including versions of Lorem Ipsum.</p>
+                        
                     </v-card-text>
                 </v-card>
             </v-col>
         </v-row>
         <v-row no-gutter>
-            <v-col cols="4">
+            <v-col lg="4" md="4" sm="12">
                 <v-card
                     class="d-flex flex-column mx-auto py-8"
                     elevation="10"
@@ -108,9 +127,15 @@
                     </v-list>
                 </v-card>
             </v-col>
-            <v-col cols="8">
+            <v-col lg="8" md="8" sm="12">
                 <v-sheet class="d-flex flex-wrap pa-4" elevation="0">
-                    <v-card class="pa-5 my-3 w-100" variant="outlined" width="500" v-for="i in 3" :key="i">
+                    <v-card
+                        class="pa-5 my-3 w-100"
+                        variant="outlined"
+                        width="500"
+                        v-for="i in 3"
+                        :key="i"
+                    >
                         <v-row class="justify-center">
                             <v-col cols="1" class="float-left">
                                 <v-avatar size="45">
@@ -123,17 +148,18 @@
                             <v-col class="float-left"
                                 ><v-rating
                                     model-value="3.8"
-                                    readonly="true"
-                                    color="singleratingColor"
+                                    :readonly="true"
+                                    color="singleRatingColor"
                             /></v-col>
-                            <v-col cols=12>
+                            <v-col cols="12">
                                 <h5 class="ma-0 pa-0">Awesome Grapes</h5>
                             </v-col>
-                            
+
                             <v-card-text class="pa-2">
-                                Letraset sheets containing Lorem Ipsum passages, and
-                        more recently with desktop publishing software like
-                        Aldus PageMaker including versions of Lorem Ipsum.
+                                Letraset sheets containing Lorem Ipsum passages,
+                                and more recently with desktop publishing
+                                software like Aldus PageMaker including versions
+                                of Lorem Ipsum.
                             </v-card-text>
                         </v-row>
                     </v-card>
@@ -156,9 +182,7 @@ export default {
             }),
         },
     },
-    methods: {
-
-    },
+    methods: {},
     mounted() {
         console.log(this.consultant);
     },

@@ -30,7 +30,7 @@ const customeTheme = {
         white: "#FFFFFF",
         muted: "#6c757d",
         consultantBg : '#7950DA',
-        singleratingColor : "##f9a825",
+        singleRatingColor : "#f9a825",
         text0 : "#000"
         
     },

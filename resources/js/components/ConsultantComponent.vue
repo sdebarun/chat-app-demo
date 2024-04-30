@@ -1,12 +1,12 @@
 <template>
     <v-row class="my-4">
-        <v-col cols="12" md="4" v-for="consultant in consultants" :key="consultant">
+        <v-col cols="12" md="4" v-for="consultant in consultants" :key="consultant" >
             <v-card
                 class="mx-auto px-5 py-5 rounded-lg"
                 color="consultantBg"
                 elevation="10"
             >
-                <div class="d-flex justify-between">
+                <div class="d-flex justify-between cursor-pointer" @click="loadConsultant(consultant)">
                     <v-badge color="success" dot></v-badge>
                     <v-avatar size="100">
                         <v-img
@@ -31,7 +31,7 @@
                         >
                     </v-card-title>
                 </div>
-
+            
                 <v-divider></v-divider>
 
                 <v-card-actions >
@@ -91,6 +91,9 @@ export default {
                 }
             });
             return langsStr;
+        },
+        loadConsultant(consultant) {
+            window.location.href=`/consultants/${consultant.id}`
         }
     },
     mounted() {
