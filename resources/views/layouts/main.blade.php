@@ -30,21 +30,21 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="#">Problems</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('consultants')}}">Consultants</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">AstroMall</a>
+                            <a class="nav-link" href="#">Astro Mall</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Services</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact us</a>
+                            <a class="nav-link" href="/reach-us">Contact us</a>
                         </li>
                     </ul>
 

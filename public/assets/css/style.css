@@ -16,3 +16,10 @@ img.cover{
     height: 100%;
     overflow: hidden;
 }
+
+/* navbar styles */
+
+.nav-link:hover, .nav-link:focus{
+    color: #FFF !important;
+    text-transform: uppercase;
+}

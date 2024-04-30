@@ -27,6 +27,7 @@ import RegistrationComponent from "./components/RegistrationComponent.vue";
 import NavigationComponent from "./components/NavigationComponent.vue"
 import LoginComponent from './components/LoginComponent.vue';
 import SingleConsultant from './components/SingleConsultantComponent.vue';
+import ContactUs from './components/ContactUsComponent.vue';
 app.component('example-component', ExampleComponent);
 app.component('Message', Message);
 app.component('ChatBox', ChatBox);
@@ -39,7 +40,7 @@ app.component('registration', RegistrationComponent);
 app.component('navbar', NavigationComponent);
 app.component('Login', LoginComponent);
 app.component('single-consultant', SingleConsultant);
-
+app.component('contact-us', ContactUs);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

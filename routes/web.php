@@ -26,6 +26,7 @@ Route::get('/', [PagesController::class, 'index']);
 Route::post('register-as-consultant', [AuthenticationController::class,'consultantRegistration']);
 Route::get('consultants/{id?}', [PagesController::class, 'consultants']);
 Route::get('all-categories', [PagesController::class, 'allCategories']);
+Route::get('reach-us',[PagesController::class, 'contactUs']);
 // auth routes 
 Route::group([ 'middleware' => ['auth']], function(){
     Route::get('dashboard', [App\Http\Controllers\DashboardController::class,'index'])->name('dashboard');

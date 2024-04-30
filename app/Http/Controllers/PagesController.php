@@ -39,4 +39,8 @@ class PagesController extends Controller
     public function allCategories() {
         return AstrologyCategory::get()->toArray();
     }
+
+    public function contactUs(){
+        return view('pages.contact-us');
+    }
 }
