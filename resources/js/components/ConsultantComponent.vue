@@ -18,7 +18,7 @@
                         ></v-img>
                     </v-avatar>
                     <v-card-title class="flex-grow-1 flex-column align-start">
-                        <div class="text-h6">{{consultant.name}}</div>
+                        <div class="text-h6">{{consultant.first_name }}  {{ consultant.last_name}}</div>
 
                         <!-- <div class="text-h6 font-weight-thin">
                             <v-chip class="my-2">Free</v-chip>
@@ -35,14 +35,14 @@
                 <v-divider></v-divider>
 
                 <v-card-actions >
-                    <v-chip class="mx-2">
-                    <v-btn color="white" class="font-weight-thin text-capitalize px-0">
+                    <!-- <v-chip class="mx-2">
+                    <v-btn color="white" class="font-weight-thin text-capitalize px-0 rounded-pill">
                         <v-icon icon="mdi-phone-in-talk-outline" start></v-icon>
                         Call Now
                     </v-btn>
-                    </v-chip>
+                    </v-chip> -->
                     <v-chip>
-                    <v-btn color="white" class="font-weight-thin text-capitalize px-0">
+                    <v-btn color="white" class="font-weight-thin text-capitalize px-0 rounded-pill">
                         <v-icon icon="mdi-forum-outline" start></v-icon>
                         Chat Now
                     </v-btn>

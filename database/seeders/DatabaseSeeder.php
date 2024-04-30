@@ -45,6 +45,7 @@ class DatabaseSeeder extends Seeder
             CitiesTableChunkFiveSeeder::class,
             RolesSeeder::class,
             AdminUserSeeder::class,
+            AstrologyCategoriesSeed::class,
         ]);
     }
 }

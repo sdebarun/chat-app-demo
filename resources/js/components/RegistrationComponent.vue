@@ -4,23 +4,31 @@
             <v-alert
                 closable
                 :type="errorMessage ? 'error' : 'success'"
-                variant=""
                 v-if="errorMessage"
                 class="my-4"
                 >{{ errorMessage }}
             </v-alert>
         </v-row>
         <v-row v-if="showForm"> 
-            <v-col cols="6" md="6">
+            <v-col cols="12" md="6" sm="12">
                 <v-text-field
-                    v-model="formData.name"
-                    label="Full name"
+                    v-model="formData.first_name"
+                    label="First name"
                     validate-on-blur
                     :rules="[rules.required]"
                     variant="outlined"
                 ></v-text-field>
             </v-col>
-            <v-col cols="6" md="6">
+            <v-col cols="12" md="6" sm="12">
+                <v-text-field
+                    v-model="formData.last_name"
+                    label="Last name"
+                    validate-on-blur
+                    :rules="[rules.required]"
+                    variant="outlined"
+                ></v-text-field>
+            </v-col>
+            <v-col cols="12" md="6" sm="12">
                 <v-text-field
                     v-model="formData.email"
                     label="Email"
@@ -29,7 +37,7 @@
                     :rules="[rules.validEmail]"
                 ></v-text-field>
             </v-col>
-            <v-col cols="6" md="6">
+            <v-col cols="12" md="6" sm="12">
                 <v-text-field
                     v-model="formData.phone_number"
                     label="Phone"
@@ -38,7 +46,17 @@
                     :rules="[rules.required]"
                 ></v-text-field>
             </v-col>
-            <v-col cols="6" md="6">
+            <v-col cols="12" md="6" sm="12">
+                <v-text-field
+                    v-model="formData.experience"
+                    label="Experience"
+                    validate-on-blur
+                    variant="outlined"
+                    :rules="[rules.required]"
+                    type="number"
+                ></v-text-field>
+            </v-col>
+            <v-col cols="12" md="6" sm="12">
                 <v-text-field
                     v-model="formData.password"
                     label="Password"
@@ -47,7 +65,7 @@
                     :rules="[rules.required]"
                 ></v-text-field>
             </v-col>
-            <v-col cols="6" md="6">
+            <v-col cols="12" md="6" sm="12">
                 <v-text-field
                     v-model="formData.street_1"
                     label="Address line 1"
@@ -56,7 +74,7 @@
                     :rules="[rules.required]"
                 ></v-text-field>
             </v-col>
-            <v-col cols="6" md="6">
+            <v-col cols="12" md="6" sm="12">
                 <v-text-field
                     v-model="formData.street_2"
                     label="Address line 2"
@@ -64,7 +82,7 @@
                     variant="outlined"
                 ></v-text-field>
             </v-col>
-            <v-col cols="4" md="4">
+            <v-col cols="12" md="4" sm="12">
                 <v-text-field
                     v-model="formData.pincode"
                     label="Pincode"
@@ -73,7 +91,7 @@
                     :rules="[rules.required]"
                 ></v-text-field>
             </v-col>
-            <v-col cols="4" md="4">
+            <v-col cols="6" md="4" sm="6">
                 <v-select
                     v-model="formData.country_id"
                     :items="countries"
@@ -85,7 +103,7 @@
                     validate-on-blur
                 ></v-select>
             </v-col>
-            <v-col cols="4" md="4">
+            <v-col cols="6" md="4" sm="6">
                 <v-select
                     v-model="formData.state_id"
                     :items="states"
@@ -97,17 +115,7 @@
                     validate-on-blur
                 ></v-select>
             </v-col>
-            <v-col cols="4" md="4">
-                <v-text-field
-                    v-model="formData.experience"
-                    label="Experience"
-                    validate-on-blur
-                    variant="outlined"
-                    :rules="[rules.required]"
-                    type="number"
-                ></v-text-field>
-            </v-col>
-            <v-col cols="4" md="4">
+            <v-col cols="12" md="6" sm="12">
                 <v-select
                     v-model="formData.languages_spoken"
                     :items="languages"
@@ -140,13 +148,13 @@
                     Sign up
                 </v-btn>
 
-                <v-btn
+                <!-- <v-btn
                     class="ma-2 text-capitalize"
                     color="warning"
                     @click="clearInputs()"
                 >
                     Clear
-                </v-btn>
+                </v-btn> -->
             </v-col>
         </v-row>
         <v-row v-if="success">
@@ -232,7 +240,7 @@ export default {
 </script>
 
 <style lang="scss">
-.v-field__input input {
+input {
     background: transparent;
 }
 </style>
