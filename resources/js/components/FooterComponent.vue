@@ -2,7 +2,6 @@
     <v-container class="bg-surface-variant mb-0" fluid>
         <v-row
             align="center"
-            style="height: 150px"
             no-gutters
             class="px-5 mx-5"
         >
@@ -21,16 +20,17 @@
                     like Aldus PageMaker including versions of Lorem Ipsum.
                 </p>
             </v-col>
-            <v-col md="3">
+            <!-- todo cols needs to be defined properly once the content is available -->
+            <v-col cols="12" lg="3" md="3" sm="6"> 
                 <h4>Section 1</h4>
             </v-col>
-            <v-col md="3">
+            <v-col cols="12" lg="3" md="3" sm="6">
                 <h4>Section 2</h4>
             </v-col>
-            <v-col md="3">
+            <v-col cols="12" lg="3" md="3" sm="6">
                 <h4>Section 3</h4>
             </v-col>
-            <v-col md="3">
+            <v-col cols="12" lg="3" md="3" sm="6">
                 <h4>Section 4</h4>
             </v-col>
         </v-row>
