@@ -31,7 +31,7 @@
             </v-col>
             <v-col md="8">
                 <v-card variant="tonal">
-                    <v-card-title>{{ consultant.name }}</v-card-title>
+                    <v-card-title>{{ consultant.first_name }} {{ consultant.last_name }}</v-card-title>
                     <v-card-subtitle>
                         <v-chip
                             class="mr-1 font-weight-bold text-text0"
@@ -51,7 +51,11 @@
                                 class="ma-2"
                                 icon="mdi-theme-light-dark"
                             ></v-icon
-                            ><span>Physics, Chemistry, Math</span></v-chip
+                            >
+                            <span v-for="(category, index) in consultant.astrology_categories" :key="index">
+                                {{ category.name}}{{ index+1 < consultant.astrology_categories.length ? ', ' : '' }}
+                            </span>
+                            </v-chip
                         ></v-card-subtitle
                     >
                     <v-card-text>

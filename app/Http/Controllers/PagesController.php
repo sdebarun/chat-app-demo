@@ -25,7 +25,7 @@ class PagesController extends Controller
 
     public function consultants( $id = null) {
         if(!is_null($id)){
-            $consultant = $this->userModel->find($id);
+            $consultant = $this->userModel->with('astrologyCategories')->find($id);
             return !is_null($consultant) ? view('pages.consultant-detail')->with(['consultant' => $consultant]) : abort(404);
         }
         $consultants = $this->userModel->role('consultant')->get();
