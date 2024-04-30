@@ -137,7 +137,7 @@
                         :key="i"
                     >
                         <v-row class="justify-center">
-                            <v-col cols="1" class="float-left">
+                            <v-col cols="1" class="float-left" :class="$vuetify.display.smAndDown ? 'mr-4' : ''">
                                 <v-avatar size="45">
                                     <v-img
                                         class="flex-grow-0"
