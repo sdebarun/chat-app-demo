@@ -9,7 +9,7 @@
                 >{{ errorMessage }}
             </v-alert>
         </v-row>
-        <v-row v-if="showForm"> 
+        <v-row v-if="showForm">
             <v-col cols="12" md="6" sm="12">
                 <v-text-field
                     v-model="formData.first_name"
@@ -127,6 +127,20 @@
                     multiple
                 ></v-select>
             </v-col>
+            <v-col cols="12" md="6" sm="12">
+                <v-select
+                    v-model="formData.categories"
+                    :items="categories"
+                    item-title="name"
+                    item-value="id"
+                    label="Categories"
+                    clearable
+                    variant="outlined"
+                    validate-on-blur
+                    chips
+                    multiple
+                ></v-select>
+            </v-col>
             <!-- <v-col cols="4" md="4">
                 <v-file-input
                     v-model="formData.avatar"
@@ -158,15 +172,15 @@
             </v-col>
         </v-row>
         <v-row v-if="success">
-            <registration-success/>
+            <registration-success />
         </v-row>
     </v-container>
 </template>
 
 <script>
-import RegistrationSuccess from './RegistrationSuccess.vue';
+import RegistrationSuccess from "./RegistrationSuccess.vue";
 export default {
-  components: { RegistrationSuccess },
+    components: { RegistrationSuccess },
     data: () => ({
         errorMessage: null,
         errors: false,
@@ -206,24 +220,27 @@ export default {
             { name: "Sikkim", id: 2 },
         ],
         languages: ["Bengali", "English", "Hindi"],
+        categories: [],
         showForm: true,
-        success : false,
+        success: false,
     }),
 
     methods: {
-        submitForm() {
-            console.log(this.formData);
-        },
-        clearInputs() {
-            //
+        getCategories() {
+            window.axios
+                .get("all-categories")
+                .then((data) => {
+                    this.categories = data.data;
+                })
+                .catch((err) => console.log(err));
         },
 
         submitForm() {
             console.log(this.formData);
             window.axios
-                .post("/registration", this.formData)
+                .post("/register-as-consultant", this.formData)
                 .then((data) => {
-                    if(data.status){
+                    if (data.status) {
                         this.showForm = false;
                         this.success = true;
                     }
@@ -236,6 +253,9 @@ export default {
                 });
         },
     },
+    created() {
+        this.getCategories();
+    }
 };
 </script>
 

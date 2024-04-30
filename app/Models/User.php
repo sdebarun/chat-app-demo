@@ -70,4 +70,8 @@ class User extends Authenticatable
     public function recipientMessages() {
         return $this->hasMany(Message::class,'recipient_id');
     }
+
+    public function astrologyCategories(){
+        return $this->belongsToMany(AstrologyCategory::class,'astrology_categories_users');
+    }
 }

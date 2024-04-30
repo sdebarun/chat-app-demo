@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AstrologyCategory;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -32,6 +33,10 @@ class PagesController extends Controller
     }
 
     public function topConsultants(){
-        return $this->userModel->role('consultant')->orderBy('rating',"DESC")->limit(6)->get();
+        return $this->userModel->role('consultant')->with('astrologyCategories')->orderBy('id',"DESC")->limit(6)->get();
+    }
+
+    public function allCategories() {
+        return AstrologyCategory::get()->toArray();
     }
 }

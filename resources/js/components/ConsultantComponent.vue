@@ -12,23 +12,27 @@
                         <v-img
                             class="flex-grow-0"
                             height="125px"
-                            :src="consultant.diaplay_pic ? `/assests/avatars/${consultant.diaplay_pic}` :`/assets/images/dummy.jpg`"
+                            :src="consultant.display_pic ? `/assets/avatars/${consultant.display_pic}` :`/assets/images/dummy.jpg`"
                             style="flex-basis: 125px"
                             contain
                         ></v-img>
                     </v-avatar>
                     <v-card-title class="flex-grow-1 flex-column align-start">
-                        <div class="text-h6">{{consultant.first_name }}  {{ consultant.last_name}}</div>
+                        <div class="text-h6">{{consultant.first_name }}</div>
 
                         <!-- <div class="text-h6 font-weight-thin">
                             <v-chip class="my-2">Free</v-chip>
                         </div> -->
-                        <v-card-subtitle class="font-weight-thin"
-                            >Physics, Chemistry, Math</v-card-subtitle
+                        <v-card-subtitle class="font-weight-thin text-capitalize"
+                            ><span v-for="(category, index) in consultant.astrology_categories" :key="index">
+                                {{ category.name}}{{ index+1 < consultant.astrology_categories.length ? ', ' : '' }}
+                            </span>
+                            </v-card-subtitle
                         >
-                        <v-card-subtitle class="font-weight-thin"
+                        <v-card-subtitle class="font-weight-thin text-capitalize"
                             >{{ parseLanguages(consultant.languages_spoken) }}</v-card-subtitle
                         >
+                        <!-- <v-card-subtitle class="font-weight-thin"></v-card-subtitle> -->
                     </v-card-title>
                 </div>
             
@@ -94,7 +98,14 @@ export default {
         },
         loadConsultant(consultant) {
             window.location.href=`/consultants/${consultant.id}`
-        }
+        },
+        // parseCategories(categories){
+        //     const size = categories.length;
+
+        //     for (category, index in categories) {
+
+        //     }
+        // }
     },
     mounted() {
         console.log(this.consultants);
