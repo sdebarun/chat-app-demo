@@ -34,3 +34,16 @@ img.cover{
     background-size: cover;
     margin-bottom: -16px !important;
 }
+
+a.all-consultant-btn{
+    border: 2px solid #7950DA;
+    font-size: 16px ;
+    border-radius: 999px;
+    font-weight: bold;
+}
+
+a.all-consultant-btn:hover{
+    border: 2px solid #7950DA;
+    font-size: 16px ;
+    font-weight: bold;
+}
