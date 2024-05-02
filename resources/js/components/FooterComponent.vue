@@ -1,5 +1,5 @@
 <template>
-    <v-container class="bg-surface-variant mb-0" fluid>
+    <v-container class="bg-surface-variant mb-0 " fluid>
         <v-row
             align="center"
             no-gutters

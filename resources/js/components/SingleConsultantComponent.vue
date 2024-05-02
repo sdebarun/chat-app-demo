@@ -30,7 +30,7 @@
                 </div>
             </v-col>
             <v-col md="8">
-                <v-card variant="tonal">
+                <v-card variant="elevated" elevation=3 hover>
                     <v-card-title>{{ consultant.first_name }} {{ consultant.last_name }}</v-card-title>
                     <v-card-subtitle>
                         <v-chip

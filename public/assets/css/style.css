@@ -28,3 +28,9 @@ img.cover{
 .font-family-philosopher{
     font-family: "Philosopher", sans-serif;
 }
+
+.bg0{
+    background-image: url("/assets/images/bg0.jpeg");
+    background-size: cover;
+    margin-bottom: -16px !important;
+}

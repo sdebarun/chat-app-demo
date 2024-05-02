@@ -1,8 +1,8 @@
 
 @extends('layouts.main')
 @section('content')
-<div class="container font-family-philosopher">
-    <h3 class="my-4">Consultants</h3>
-    <consultant :consultants="{{ json_encode($consultants) }}" class="font-family-philosopher"/>
+<div class="font-family-philosopher bg0">
+    <h3 class="py-4 px-4">Consultants</h3>
+    <consultant :consultants="{{ json_encode($consultants) }}" class="font-family-philosopher px-4"/>
 </div>
 @endsection
