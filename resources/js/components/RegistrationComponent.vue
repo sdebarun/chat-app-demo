@@ -212,13 +212,9 @@ export default {
         },
 
         countries: [
-            { name: "India", id: 1 },
-            { name: "Bangladesh", id: 2 },
+            { name: "India", id: 101 },
         ],
-        states: [
-            { name: "WestBengal", id: 1 },
-            { name: "Sikkim", id: 2 },
-        ],
+        states: [],
         languages: ["Bengali", "English", "Hindi"],
         categories: [],
         showForm: true,
@@ -252,9 +248,13 @@ export default {
                     }
                 });
         },
+        getStates(){
+            window.axios.get('states').then(data => console.log(this.states = data.data)).catch(err => console.log(err));
+        }
     },
     created() {
         this.getCategories();
+        this.getStates();
     }
 };
 </script>

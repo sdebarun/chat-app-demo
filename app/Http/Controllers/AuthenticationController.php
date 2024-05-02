@@ -15,7 +15,8 @@ class AuthenticationController extends Controller
       $requestData = $request->except(['password', 'languages_spoken','categories']);
       $requestData['languages_spoken'] = json_encode($request->languages_spoken);
       $requestData['password'] = Hash::make($request->password);
-      $requestData['last_active_at'] = Carbon::now();
+      // $requestData['last_active_at'] = Carbon::now();
+      $requestData['deleted_at'] =  Carbon::now();
       $categories = $request->categories;
     //   return $requestData;
       $referralCode = Str::random(8);

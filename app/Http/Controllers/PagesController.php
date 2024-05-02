@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AstrologyCategory;
 use App\Models\User;
+use App\Models\State;
 use Illuminate\Http\Request;
+use App\Models\AstrologyCategory;
 
 /**
  * it drives the website pages 
@@ -28,7 +29,7 @@ class PagesController extends Controller
             $consultant = $this->userModel->with('astrologyCategories')->find($id);
             return !is_null($consultant) ? view('pages.consultant-detail')->with(['consultant' => $consultant]) : abort(404);
         }
-        $consultants = $this->userModel->role('consultant')->get();
+        $consultants = $this->userModel->role('consultant')->with(['astrologyCategories'])->get();
         return view('pages.consultants')->with(['consultants' => $consultants]);
     }
 
@@ -42,5 +43,10 @@ class PagesController extends Controller
 
     public function contactUs(){
         return view('pages.contact-us');
+    }
+
+    public function getStates(){
+        $states = State::where('country_id', 101)->get();
+        return response()->json($states);
     }
 }
