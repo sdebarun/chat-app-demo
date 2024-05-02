@@ -1,9 +1,10 @@
+
 .top-nav {
     background: #7950DA;
-    
 }
 .top-nav a {
     color: #FFF;
+    font-size: 18px;
 }
 
 .logo-img{
@@ -22,4 +23,8 @@ img.cover{
 .nav-link:hover, .nav-link:focus{
     color: #FFF !important;
     text-transform: uppercase;
+}
+
+.font-family-philosopher{
+    font-family: "Philosopher", sans-serif;
 }

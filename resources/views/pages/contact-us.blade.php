@@ -1,5 +1,5 @@
 @extends('layouts.main')
 
 @section('content')
-    <contact-us></contact-us>
+    <contact-us class="font-family-philosopher"></contact-us>
 @endsection

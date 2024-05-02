@@ -50,7 +50,7 @@
                 ></v-icon>
             </a>
         </div>
-        <div class="text-center"><v-icon icon="mdi-copyright" size=15></v-icon> {{ new Date().getFullYear() }} — <strong>Debarun Saha</strong></div>
+        <div class="text-center"><v-icon icon="mdi-copyright" size=15></v-icon> {{ new Date().getFullYear() }} — <strong>RudraGanga</strong></div>
     </v-container>  
 </template>
 
@@ -67,8 +67,8 @@ export default {
                 link: "twitter.com",
             },
             {
-                icon: "mdi-linkedin",
-                link: "linkedin.com",
+                icon: "mdi-pinterest",
+                link: "#",
             },
             {
                 icon: "mdi-instagram",
@@ -76,9 +76,6 @@ export default {
             },
         ],
     }),
-    mounted() {
-        console.log("Footer Mounted");
-    },
 };
 </script>
 

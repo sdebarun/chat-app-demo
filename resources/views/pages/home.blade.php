@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <slider></slider>
-    <h3 class="my-4">Astrologers</h3>
+    <h3 class="my-4 font-family-philosopher">Astrologers</h3>
     
-        <consultant :consultants="{{ json_encode($consultants) }}"></consultant>
+        <consultant :consultants="{{ json_encode($consultants) }}" class="font-family-philosopher"></consultant>
    
 </div>
 @endsection

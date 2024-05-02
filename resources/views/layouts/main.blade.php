@@ -11,16 +11,18 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
-    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet" crossorigin>
+    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" crossorigin>
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light top-nav shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light top-nav font-family-philosopher shadow-sm">
             <div class="container">
                 <a class="navbar-brand logo-link" href="{{ url('/') }}"><img class="logo-img" src="{{ asset('assets/images/logo.png') }}" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -29,7 +31,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+                    <ul class="navbar-nav me-auto font-family-philosopher">
                         <!-- <li class="nav-item">
                             <a class="nav-link" href="#">Problems</a>
                         </li> -->
@@ -37,11 +39,11 @@
                             <a class="nav-link" href="{{url('consultants')}}">Consultants</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Astro Mall</a>
+                            <a class="nav-link" href="#">Astro Shop</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="#">Services</a>
-                        </li>
+                        </li> -->
 
                         <li class="nav-item">
                             <a class="nav-link" href="/reach-us">Contact us</a>
@@ -60,7 +62,7 @@
 
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Join us') }}</a>
                         </li>
                         @endif
                         @else
@@ -88,7 +90,7 @@
         <main class="">
             @yield('content')
         </main>
-            <footer-section/>
+            <footer-section class="font-family-philosopher"/>
     </div>
 </body>
 
