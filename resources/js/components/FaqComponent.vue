@@ -17,7 +17,6 @@
                         class="my-2 py-1 text-primary"
                         elevation=2
                         :focusable="false"
-
                     ></v-expansion-panel>
                 </v-expansion-panels>
            

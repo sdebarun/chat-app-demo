@@ -87,7 +87,7 @@
                 </div>
             </div>
         </nav>
-        <main class="">
+        <main class="bg-antiquewhite">
             @yield('content')
         </main>
             <footer-section class="font-family-philosopher"/>
