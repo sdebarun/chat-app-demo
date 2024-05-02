@@ -26,10 +26,10 @@ class PagesController extends Controller
 
     public function consultants( $id = null) {
         if(!is_null($id)){
-            $consultant = $this->userModel->with('astrologyCategories')->find($id);
+            $consultant = $this->userModel->where('is_active',1)->with('astrologyCategories')->find($id);
             return !is_null($consultant) ? view('pages.consultant-detail')->with(['consultant' => $consultant]) : abort(404);
         }
-        $consultants = $this->userModel->role('consultant')->with(['astrologyCategories'])->get();
+        $consultants = $this->userModel->where('is_active', 1)->role('consultant')->with(['astrologyCategories'])->get();
         return view('pages.consultants')->with(['consultants' => $consultants]);
     }
 

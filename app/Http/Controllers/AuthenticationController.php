@@ -48,6 +48,7 @@ class AuthenticationController extends Controller
     ]);
 
     if (Auth::attempt($credentials) && Auth::user()->is_active) {
+      User::where('id',Auth::id())->update(['last_active_at' => Carbon::now()]);
       $request->session()->regenerate();
 
       return response()->json(['success' => true], 204);

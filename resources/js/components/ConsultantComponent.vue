@@ -12,7 +12,7 @@
                         <v-img
                             class="flex-grow-0"
                             height="125px"
-                            :src="consultant.display_pic ? `/assets/avatars/${consultant.display_pic}` :`/assets/images/dummy.jpg`"
+                            :src="consultant.display_pic ? `/storage/${consultant.display_pic}` :`/assets/images/dummy.jpg`"
                             style="flex-basis: 125px"
                             contain
                         ></v-img>

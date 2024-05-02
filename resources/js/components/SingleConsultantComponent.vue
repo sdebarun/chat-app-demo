@@ -7,7 +7,7 @@
                         class="flex-grow"
                         :src="
                             consultant.display_pic
-                                ? `/assets/avatars/${consultant.display_pic}`
+                                ? `/storage/${consultant.display_pic}`
                                 : `/assets/images/dummy.jpg`
                         "
                         style="flex-basis: 125px"
