@@ -39,8 +39,8 @@ class UserCrudController extends CrudController
      */
     protected function setupListOperation()
     {
+        $this->crud->query = $this->crud->query->withTrashed();
         CRUD::setFromDb(); // set columns from db columns.
-
         /**
          * Columns can be defined using the fluent syntax:
          * - CRUD::column('price')->type('number');
@@ -55,6 +55,7 @@ class UserCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
+        $this->crud->query = $this->crud->query->withTrashed();
         CRUD::setValidation(UserRequest::class);
         CRUD::setFromDb(); // set fields from db columns.
 
@@ -72,6 +73,7 @@ class UserCrudController extends CrudController
      */
     protected function setupUpdateOperation()
     {
+        $this->crud->query = $this->crud->query->withTrashed();
         $this->setupCreateOperation();
     }
 }

@@ -16,10 +16,12 @@ Route::group(['middleware' => ['auth']],function(){
 });
 
 
-Auth::routes();
-
+// Auth::routes();
+Route::get('login', [AuthenticationController::class,'showLoginForm']);
+Route::post('login', [AuthenticationController::class,'authenticate']);
+Route::post('logout', [AuthenticationController::class,'logout']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('register',[AuthenticationController::class,'register']);
 Route::get('/', [PagesController::class, 'index']);
 
 // no middleware - site pages 
@@ -31,4 +33,5 @@ Route::get('states', [PagesController::class, 'getStates']);
 // auth routes 
 Route::group([ 'middleware' => ['auth']], function(){
     Route::get('dashboard', [App\Http\Controllers\DashboardController::class,'index'])->name('dashboard');
+    
 });

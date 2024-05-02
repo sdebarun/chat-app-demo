@@ -1,5 +1,16 @@
 <template>
     <v-container>
+        <v-row v-if="errMsg" class="justify-center">
+            <v-col :cols="$vuetify.display.smAndDown ? 12 : 6">
+            <v-alert
+                closable
+                type="error"
+                v-if="errMsg"
+                class="my-4"
+                >{{ errMsg }}
+            </v-alert>
+            </v-col>
+        </v-row>
         <v-row class="justify-center">
             <v-col :cols="$vuetify.display.smAndDown ? 12 : 6">
                 <v-tabs v-model="tab" align-tabs="center" color="primary">
@@ -40,7 +51,7 @@
                                     <v-btn
                                         :disabled="!(email && password)"
                                         color="primary"
-                                        @click="loginByemail"
+                                        @click="loginByEmail"
                                         :loading="loading"
                                         >Login</v-btn
                                     >
@@ -58,7 +69,10 @@
                                         label="Phone number"
                                         variant="underlined"
                                         v-model="phoneNumber"
-                                        :rules="[rules.required, rules.validPhone]"
+                                        :rules="[
+                                            rules.required,
+                                            rules.validPhone,
+                                        ]"
                                         validate-on-blur
                                         type="number"
                                         hide-spin-buttons
@@ -71,7 +85,6 @@
                                         v-model="otp"
                                         :rules="[rules.required]"
                                         validate-on-blur
-                                        
                                     ></v-otp-input>
                                 </v-col>
                             </v-row>
@@ -92,7 +105,10 @@
         </v-row>
         <v-row class="py-0 my-0">
             <v-col class="text-center">
-                <p> Not a member of the family yet ? <a class="join-now-link" href="/register">Join us now</a></p>
+                <p>
+                    Not a member of the family yet ?
+                    <a class="join-now-link" href="/register">Join us now</a>
+                </p>
             </v-col>
         </v-row>
     </v-container>
@@ -107,17 +123,19 @@ export default {
         phoneNumber: null,
         loading: false,
         otp: "",
+        errMsg: null,
         rules: {
             required: (v) => !!v || "The filed is required",
             validEmail: (v) =>
                 /.+@.+\..+/.test(v) || "Please enter a valid email",
-            validPhone : (v) =>  /^[0-9]+$/.test(v) || "Please enter a valid phone number",
+            validPhone: (v) =>
+                /^[0-9]+$/.test(v) || "Please enter a valid phone number",
         },
     }),
 
     computed: {},
     methods: {
-        loginByemail() {
+        loginByEmail() {
             console.log([this.email, this.password]);
             this.loading = true;
             window.axios
@@ -133,7 +151,11 @@ export default {
                         window.location.href = "/";
                     }
                 })
-                .catch((err) => console.log(err))
+                .catch((err) => {
+                    console.log(err);
+                    this.errMsg = err.response.data.message
+                    }
+                    )
                 .finally(() => {
                     this.loading = false;
                 });
