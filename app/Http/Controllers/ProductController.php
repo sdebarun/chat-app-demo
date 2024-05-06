@@ -9,8 +9,10 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return Product::where('is_active', true)->with(['images' => function ($q) {
+        $products =  Product::where('is_active', true)->with(['images' => function ($q) {
             return $q->where('is_active', true);
         }])->get();
+
+        return response()->json(['data' => $products],200);
     }
 }
