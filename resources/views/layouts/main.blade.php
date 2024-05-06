@@ -39,7 +39,7 @@
                             <a class="nav-link" href="{{url('consultants')}}">Consultants</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Astro Shop</a>
+                            <a class="nav-link" href="astro-mall">Astro Shop</a>
                         </li>
                         <!-- <li class="nav-item">
                             <a class="nav-link" href="#">Services</a>

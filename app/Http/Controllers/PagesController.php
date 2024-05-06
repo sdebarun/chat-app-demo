@@ -50,7 +50,7 @@ class PagesController extends Controller
         return response()->json($states);
     }
 
-    public function products(){
-        return view('pages.product.index');
+    public function astroMall(){
+        return view('pages.products.index');
     }
 }

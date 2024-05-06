@@ -31,7 +31,9 @@ Route::get('consultants/{id?}', [PagesController::class, 'consultants']);
 Route::get('all-categories', [PagesController::class, 'allCategories']);
 Route::get('reach-us',[PagesController::class, 'contactUs']);
 Route::get('states', [PagesController::class, 'getStates']);
-Route::get('products', [PagesController::class, 'products']);
+Route::get('astro-mall', [PagesController::class, 'astroMall']);
+Route::get('products', [ProductController::class, 'index']);
+
 // auth routes 
 Route::group([ 'middleware' => ['auth']], function(){
     Route::get('dashboard', [App\Http\Controllers\DashboardController::class,'index'])->name('dashboard');
