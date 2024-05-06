@@ -49,4 +49,8 @@ class PagesController extends Controller
         $states = State::where('country_id', 101)->get();
         return response()->json($states);
     }
+
+    public function products(){
+        return view('pages.product.index');
+    }
 }

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Database\Seeders\RolesSeeder;
+use Database\Seeders\ProductsSeeder;
 use Database\Seeders\AdminUserSeeder;
 use Database\Seeders\StatesTableSeeder;
 use Database\Seeders\CountriesTableSeeder;
@@ -46,6 +47,7 @@ class DatabaseSeeder extends Seeder
             RolesSeeder::class,
             AdminUserSeeder::class,
             AstrologyCategoriesSeed::class,
+            ProductsSeeder::class,
         ]);
     }
 }

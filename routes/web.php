@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 
 // Route::get('/', function () {
@@ -30,6 +31,7 @@ Route::get('consultants/{id?}', [PagesController::class, 'consultants']);
 Route::get('all-categories', [PagesController::class, 'allCategories']);
 Route::get('reach-us',[PagesController::class, 'contactUs']);
 Route::get('states', [PagesController::class, 'getStates']);
+Route::get('products', [PagesController::class, 'products']);
 // auth routes 
 Route::group([ 'middleware' => ['auth']], function(){
     Route::get('dashboard', [App\Http\Controllers\DashboardController::class,'index'])->name('dashboard');
