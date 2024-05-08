@@ -53,14 +53,22 @@ a.all-consultant-btn:hover{
 }
 
 a.all-products-btn{
-    border: 2px solid #7950DA;
+    border: 2px solid #ff9800;
     font-size: 16px ;
     border-radius: 999px;
     font-weight: bold;
+    color: #ff9800;
+    background-color: #fff;;
 }
 
 a.all-products-btn:hover{
-    border: 2px solid #7950DA;
+    border: 2px solid #ff9800;
     font-size: 16px ;
     font-weight: bold;
+    background-color: #ff9800;
+    color: #FFF;
+}
+
+.logo-link{
+    max-width:50%;
 }

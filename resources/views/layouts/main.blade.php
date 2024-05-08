@@ -16,7 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet" crossorigin>
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" crossorigin>
-    <!-- Scripts -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/favicon.ico') }}"/>
+   
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
