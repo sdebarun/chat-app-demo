@@ -31,7 +31,7 @@ Route::get('consultants/{id?}', [PagesController::class, 'consultants']);
 Route::get('all-categories', [PagesController::class, 'allCategories']);
 Route::get('reach-us',[PagesController::class, 'contactUs']);
 Route::get('states', [PagesController::class, 'getStates']);
-Route::get('astro-mall', [PagesController::class, 'astroMall']);
+Route::get('astro-shop', [PagesController::class, 'astroMall']);
 Route::get('products', [ProductController::class, 'index']);
 
 // auth routes 

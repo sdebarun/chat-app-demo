@@ -51,3 +51,16 @@ a.all-consultant-btn:hover{
     font-size: 16px ;
     font-weight: bold;
 }
+
+a.all-products-btn{
+    border: 2px solid #7950DA;
+    font-size: 16px ;
+    border-radius: 999px;
+    font-weight: bold;
+}
+
+a.all-products-btn:hover{
+    border: 2px solid #7950DA;
+    font-size: 16px ;
+    font-weight: bold;
+}

@@ -18,9 +18,9 @@ class PagesController extends Controller
     {
         //
     }
-    public function index() {
+    public function index(Request $request) {
         $consultants = $this->topConsultants();
-        return view('pages.home')->with(['consultants' => $consultants]);
+        return view('pages.home')->with(['consultants' => $consultants, 'limit' => 8]);
     }
 
 
