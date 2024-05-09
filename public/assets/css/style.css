@@ -1,9 +1,9 @@
 
 .top-nav {
-    background: #7950DA;
+    background: #FFF;
 }
 .top-nav a {
-    color: #FFF;
+    color: #c73537 !important;
     font-size: 18px;
 }
 
@@ -21,7 +21,7 @@ img.cover{
 /* navbar styles */
 
 .nav-link:hover, .nav-link:focus{
-    color: #FFF !important;
+    color: #ff9800 !important;
     text-transform: uppercase;
 }
 
@@ -30,13 +30,25 @@ img.cover{
 }
 
 .bg0{
-    background-image: url("/assets/images/bg0.jpeg");
+    background-image: url("/assets/images/bg-orange.jpg");
+    background-size: cover;
+    margin-bottom: -16px !important;
+}
+
+.bg-dark{
+    background-image: url("/assets/images/bg-dark.jpg");
     background-size: cover;
     margin-bottom: -16px !important;
 }
 
 .bg-antiquewhite{
-    background-color: antiquewhite;
+    background-image: url("/assets/images/bg-orange.jpg");
+    background-size: cover;
+    margin-bottom: -16px !important;
+}
+
+.bg-red-yellow-gradients {
+    background-image: linear-gradient( #c73537, #ff9800);
 }
 
 a.all-consultant-btn{
@@ -71,4 +83,8 @@ a.all-products-btn:hover{
 
 .logo-link{
     max-width:50%;
+}
+
+.card {
+    background-color: rgb(220 123 122);
 }

@@ -31,7 +31,9 @@ const customeTheme = {
         muted: "#6c757d",
         consultantBg : '#7950DA',
         singleRatingColor : "#f9a825",
-        text0 : "#000"
+        text0 : "#000",
+        lightRed : '#c73537',
+
         
     },
 };

@@ -1,19 +1,19 @@
 <template>
     <v-container class="py-2 px-0" :fluid="true">
         <v-row no-gutters>
-            <v-carousel class="rounded-lg" :cycle="true" show-arrows="hover" :hide-delimiter-background="true" :hide-delimiters="true" :height="$vuetify.display.mobile ? 250 : 400" >
+            <v-carousel class="rounded-lg pa-2" :cycle="true" show-arrows="hover" :hide-delimiter-background="true" :hide-delimiters="true" :height="$vuetify.display.mobile ? 250 : 500" >
                 <v-carousel-item
-                    src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                    src="/assets/images/slide1.jpg"
                     cover
                 ></v-carousel-item>
 
                 <v-carousel-item
-                    src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
+                    src="/assets/images/slider2.jpg"
                     cover
                 ></v-carousel-item>
 
                 <v-carousel-item
-                    src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+                    src="/assets/images/slider3.jpg"
                     cover
                 ></v-carousel-item>
             </v-carousel>

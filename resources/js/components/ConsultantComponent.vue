@@ -3,12 +3,12 @@
         <v-col cols="12" md="4" v-for="consultant in consultants" :key="consultant" >
             <v-card
                 class="mx-auto px-5 py-5 rounded-lg"
-                color="consultantBg"
+                color="#c73537"
                 elevation="10"
             >
                 <div class="d-flex justify-between cursor-pointer" @click="loadConsultant(consultant)">
                     <v-badge color="success" dot></v-badge>
-                    <v-avatar size="100">
+                    <v-avatar size="100" class="">
                         <v-img
                             class="flex-grow-0"
                             height="125px"

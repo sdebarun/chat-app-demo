@@ -14,7 +14,7 @@
                         :title="faq.question"
                         collapse-icon="mdi-minus"
                         expand-icon="mdi-plus"
-                        class="my-2 py-1 text-primary"
+                        class="my-2 py-1 text-lightRed"
                         elevation=2
                         :focusable="false"
                     ></v-expansion-panel>
