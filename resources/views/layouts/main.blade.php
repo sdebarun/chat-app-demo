@@ -90,7 +90,7 @@
                 </div>
             </div>
         </nav>
-        <main class="bg-antiquewhite">
+        <main @class(["bg-antiquewhite" => !(request()->is('login') || request()->is('register')) ])>
             @yield('content')
         </main>
             <footer-section class="font-family-philosopher"/>
