@@ -156,7 +156,7 @@
             <v-col cols="12" class="text-center">
                 <v-btn
                     class="ma-2 text-capitalize"
-                    color="primary"
+                    color="lightRed"
                     @click="submitForm()"
                 >
                     Sign up

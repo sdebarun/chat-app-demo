@@ -50,7 +50,7 @@
                                 <v-col class="text-center">
                                     <v-btn
                                         :disabled="!(email && password)"
-                                        color="primary"
+                                        color="lightRed"
                                         @click="loginByEmail"
                                         :loading="loading"
                                         >Login</v-btn
@@ -91,7 +91,7 @@
                             <v-row>
                                 <v-col class="text-center">
                                     <v-btn
-                                        color="primary"
+                                        color="lightRed"
                                         :disabled="!phoneNumber"
                                         @click="loginByPhoneNumber"
                                         >Login</v-btn
