@@ -99,4 +99,8 @@ a.all-products-btn:hover{
     .logo-img{
         max-width: 100% !important;
     }
+
+    .top-nav a {
+        text-align: center;
+    }
 }
