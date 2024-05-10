@@ -13,7 +13,7 @@
         </v-row>
         <v-row class="justify-center">
             <v-col :cols="$vuetify.display.smAndDown ? 12 : 6">
-                <v-tabs v-model="tab" align-tabs="center" color="primary">
+                <v-tabs v-model="tab" align-tabs="center" color="lightRed">
                     <v-tab :value="1">Using Email id</v-tab>
                     <v-tab :value="2">Usign Phone number</v-tab>
                 </v-tabs>
