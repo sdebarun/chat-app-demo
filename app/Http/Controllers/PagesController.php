@@ -34,7 +34,7 @@ class PagesController extends Controller
     }
 
     public function topConsultants(){
-        return $this->userModel->role('consultant')->with('astrologyCategories')->orderBy('rating',"DESC")->limit(6)->get();
+        return $this->userModel->where('is_active', 1)->role('consultant')->with('astrologyCategories')->orderBy('rating',"DESC")->limit(6)->get();
     }
 
     public function allCategories() {
