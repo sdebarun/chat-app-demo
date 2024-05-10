@@ -40,6 +40,7 @@ class User extends Authenticatable
         'languages_spoken',
         'referral',
         'deleted_at',
+        'about',
     ];
 
     /**
