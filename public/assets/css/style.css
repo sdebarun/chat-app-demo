@@ -97,6 +97,6 @@ a.all-products-btn:hover{
 
 @media only screen and (max-width: 600px) {
     .logo-img{
-        max-width: 65% !important;
+        max-width: 100% !important;
     }
 }
