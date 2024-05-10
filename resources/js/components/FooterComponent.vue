@@ -6,18 +6,13 @@
             class="px-5 mx-5"
         >
             <v-col cols="12">
-                <h5>What is Lorem Ipsum?</h5>
+                <h5>Why Rudraganga?</h5>
                 <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
+                    Based on Haridwar, Uttarakhand,we are providing on-demand astrology
+prediction services. Our platform enables users to schedule sessions
+with astrologers over chat and call. It provides diversified services
+including astrology, tarot reading, vastu, match-making, and horoscope
+reading..
                 </p>
             </v-col>
             <!-- todo cols needs to be defined properly once the content is available -->
@@ -42,7 +37,7 @@
                 :key="social"
             >
                 <v-icon
-                    class="ma-5 pa-5"
+                    class="ma-4 pa-4"
                     color="white"
                     :icon="social.icon"
                     size="30"
@@ -80,7 +75,7 @@ export default {
     }),
 
     mounted() {
-        log;
+        log
     }
 };
 </script>
