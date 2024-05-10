@@ -88,3 +88,15 @@ a.all-products-btn:hover{
 .card {
     background-color: rgb(220 123 122);
 }
+
+
+
+/* 
+* media query 
+*/
+
+@media only screen and (max-width: 600px) {
+    .logo-img{
+        max-width: 65% !important;
+    }
+}
