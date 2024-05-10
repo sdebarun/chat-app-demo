@@ -55,6 +55,8 @@
 </template>
 
 <script>
+import '../reusables/_case.js';
+import { log } from '../reusables/_case.js';
 export default {
     data: () => ({
         socials: [
@@ -76,6 +78,10 @@ export default {
             },
         ],
     }),
+
+    mounted() {
+        log;
+    }
 };
 </script>
 
